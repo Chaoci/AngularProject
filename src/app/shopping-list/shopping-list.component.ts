@@ -18,5 +18,8 @@ export class ShoppingListComponent implements OnInit {
   onIngredientAdded(ingredient:Ingredients){
     this.ingredients.push(ingredient);
   }
+  DeletSelected(){
+    
+  }
 
 }
