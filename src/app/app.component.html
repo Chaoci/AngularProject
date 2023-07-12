@@ -1,0 +1,9 @@
+<app-header (featureSelected)="onSelection($event)"></app-header>
+<div class="container" appBetterHighlight [defaultColor]="'pink'">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes *ngIf="showRecipe === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="showRecipe != 'recipe'"></app-shopping-list>
+    </div>
+  </div>
+</div>
