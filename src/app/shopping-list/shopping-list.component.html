@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-10">
-        <app-shopping-edit (ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
+        <app-shopping-edit></app-shopping-edit>
         <hr>
         <ul class="list-group">
             <a 
@@ -8,11 +8,11 @@
                 style="cursor:pointer;"
                 *ngFor="let ingredient of ingredients"
             >
-            {{ingredient.name}}:{{ingredient.amount}}
-            <div class="pull-right">
+            {{ingredient.name}}: ({{ingredient.amount}})
+            <!-- <div class="pull-right">
                 <input type="checkbox" id="Delet" name="Delet">
                 <label for="Delet">Delet</label>
-            </div>
+            </div> -->
             </a>
         </ul>
     </div>
