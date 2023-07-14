@@ -9,15 +9,16 @@ import { RecipeService } from './recipe.service';
   providers: [RecipeService],
 })
 export class RecipesComponent implements OnInit {
-  selectedRecipe:Recipes;
-  constructor(private recipeService: RecipeService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.recipeService.recipeSelected.subscribe(
-      (recipe:Recipes) => {
-        this.selectedRecipe = recipe;
-      }
-    )
+
+    //透過service完成了數據的傳輸
+    // this.recipeService.recipeSelected.subscribe(
+    //   (recipe:Recipes) => {
+    //     this.selectedRecipe = recipe;
+    //   }
+    // )
   }
 
 

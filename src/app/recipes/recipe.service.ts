@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import { ShoppingListService } from './../shopping-list/shopping-list.service';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Recipes } from './recipes.model';
@@ -8,7 +9,7 @@ import { Ingredients } from '../shared/ingredients.model';
 })
 export class RecipeService {
   //讓EventEmitter放在Service可以省去中間個子層傳遞的複雜度
-  recipeSelected = new EventEmitter<Recipes>();
+  // recipeSelected = new Subject<Recipes>();
 
   private recipes: Recipes[]=[
     new Recipes('Curry', 'Green Curry super wonderful!','https://picturetherecipe.com/wp-content/uploads/2020/07/Butter-Chicken-PTR-Featured-395x500.jpg',[

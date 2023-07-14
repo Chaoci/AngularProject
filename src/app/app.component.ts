@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  showRecipe: string;
-  
-  onSelection(feature:string){
-    this.showRecipe = feature;
-    }
+    
   }
