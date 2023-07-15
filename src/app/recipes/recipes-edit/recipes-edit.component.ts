@@ -68,7 +68,7 @@ export class RecipesEditComponent implements OnInit {
     });
   }
 
-  onIngredient(){
+  onAddIngredient(){
     // 還需一個括號將其括起來 
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
@@ -78,6 +78,13 @@ export class RecipesEditComponent implements OnInit {
           Validators.pattern(/[1-9]+[0-9]*$/)])
       })
     );
+  }
+
+  onDeletIngredient(index:number){
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+
+    //如果要刪除全部的話 以下comment中的範例
+    // (<FormArray>this.recipeForm.get('ingredients')).clear();
   }
   onCancel(){
     this.router.navigate(['../'], {relativeTo: this.route})
