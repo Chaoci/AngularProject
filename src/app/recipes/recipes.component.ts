@@ -13,7 +13,7 @@ export class RecipesComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
-    this.dataStorageService.fetchRecipes();
+    
     //透過service完成了數據的傳輸
     // this.recipeService.recipeSelected.subscribe(
     //   (recipe:Recipes) => {

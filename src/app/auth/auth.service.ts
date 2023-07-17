@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 //只需要用在這邊就好的介面
 interface AuthResponseData {
@@ -17,7 +18,7 @@ interface AuthResponseData {
 export class AuthService {
   constructor(private http:HttpClient) { }
   signup(email: string, password: string){
-    return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAzoaHwzAzyJlCeh9Tu_WZw-BD0CvrEGXQ', {
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${ environment.API_key }`, {
       email: email,
       password: password,
       returnSecureToken: true,
