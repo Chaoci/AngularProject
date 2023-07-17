@@ -55,6 +55,7 @@ export class AuthComponent implements OnInit {
     authObs.subscribe(responseData =>{
       console.log(responseData);
       this.isLoading = false;
+      //如果放在上面，isLoginMode中 會被AuthGuard干擾
       this.router.navigate(['recipes']);
     }, errorMessage =>{
       console.log(errorMessage);
