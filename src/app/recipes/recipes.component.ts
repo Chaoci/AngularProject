@@ -1,3 +1,4 @@
+import { DataStorageService } from './../data-storage.service';
 import { Component, OnInit } from '@angular/core';
 import { Recipes } from './recipes.model';
 import { RecipeService } from './recipe.service';
@@ -9,10 +10,10 @@ import { RecipeService } from './recipe.service';
   providers: [],
 })
 export class RecipesComponent implements OnInit {
-  constructor() { }
+  constructor(private dataStorageService: DataStorageService) { }
 
   ngOnInit(): void {
-
+    this.dataStorageService.fetchRecipes();
     //透過service完成了數據的傳輸
     // this.recipeService.recipeSelected.subscribe(
     //   (recipe:Recipes) => {
